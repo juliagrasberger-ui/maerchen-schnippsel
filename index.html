@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="de"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Märchen-Generator&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: "Arial", sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #fff8e7;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #d2691e;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.story-container {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #fff4d6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 8px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 700px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 20px auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>button, select {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px 15px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 5px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid #d2691e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #ffe5b4;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>button:hover, select:hover {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #ffd699;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;h1&gt;Märchen-Generator&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="story-container" id="story"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Hier entsteht dein Märchen Schritt für Schritt...&lt;/p&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div style="max-width:700px; margin:auto;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;1️⃣ Einführung: &lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="intro"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value=""&gt;-- Zufällig --&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;Es war einmal ein mutiges Kind in einem fernen Dorf&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;Es war einmal eine neugierige Prinzessin auf einem hohen Schloss&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;Es war einmal ein schlauer Junge in einer kleinen Stadt&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;Es war einmal eine freundliche Hexe tief im Wald&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;Es war einmal ein tapferer Ritter auf einem fernen Hügel&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;2️⃣ Problem: &lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="problem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value=""&gt;-- Zufällig --&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;der/die/das plötzlich in große Gefahr geriet&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;der/die/das von einem geheimnisvollen Fluch bedroht wurde&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;der/die/das sein wichtiges Tier verlor&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;der/die/das von einem bösen Zauberer gejagt wurde&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;der/die/das von einem Sturm oder Unwetter heimgesucht wurde&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;3️⃣ Antagonist / Aufgabe: &lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="antagonist"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value=""&gt;-- Zufällig --&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;und da stellte ein böser Drache die Aufgabe, ….&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;plötzlich erschien eine listige Hexe und sprach: ….&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;forderte ein riesiger Riese eine schwierige Aufgabe ….&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;ein strenger König verlangte eine mutige Tat, ….&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;ein finsterer Zauberer sagte: ….&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;4️⃣ Helfer + Gegenstand: &lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="helper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value=""&gt;-- Zufällig --&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;doch eine freundliche Fee half mit einem Zauberstab&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;ein weiser Zauberer gab ein magisches Buch&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;ein sprechendes Tier reichte eine Karte&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;ein alter Zwerg schenkte einen geheimnisvollen Schlüssel&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;Eine alte Schildkröte erschien und übergab einen geheimnisvollen Schlüssel&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;ein freundlicher Bär übergab ein schützendes Amulett&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;5️⃣ Aufgabe lösen / Abenteuer bewältigen: &lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="solution"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value=""&gt;-- Zufällig --&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;und damit bewältigte die Figur alle Prüfungen&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;so könnten die Aufgaben wie durch Zauberei gelöst werden&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;so meisterte sie die schwierige/n Aufgaben&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;und damit war sie/er/es gerettet&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;so konnte sie/er alle Gefahren überwinden&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;6️⃣ Belohnung / Happy End: &lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="ending"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value=""&gt;-- Zufällig --&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;und wurde als Held gefeiert&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;und das Königreich lebte in Frieden&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;und erhielt großen Dank und einen Schatz&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;und damit war sie/er/es gerettet&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option&gt;da waren fortan alle glücklich und zufrieden&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="generateStory()"&gt;Märchen zusammenstellen&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="randomClick()"&gt;Zufälligen Satz hinzufügen&lt;/button&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const intro = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"Es war einmal ein mutiges Kind in einem fernen Dorf",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"Es war einmal eine neugierige Prinzessin auf einem hohen Schloss",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"Es war einmal ein schlauer Junge in einer kleinen Stadt",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"Es war einmal eine freundliche Hexe tief im Wald",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"Es war einmal ein tapferer Ritter auf einem fernen Hügel"</p>
+<p class="p1">];</p>
+<p class="p1">const problem = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"der/die/das plötzlich in große Gefahr geriet",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"der/die/das von einem geheimnisvollen Fluch bedroht wurde",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"der/die/das sein wichtiges Tier verlor",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"der/die/das von einem bösen Zauberer gejagt wurde",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"der/die/das von einem Sturm oder Unwetter heimgesucht wurde"</p>
+<p class="p1">];</p>
+<p class="p1">const antagonist = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"und da stellte ein böser Drache die Aufgabe, ….",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"plötzlich erschien eine listige Hexe und sprach: ….",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"forderte ein riesiger Riese eine schwierige Aufgabe ….",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"ein strenger König verlangte eine mutige Tat, ….",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"ein finsterer Zauberer sagte: …."</p>
+<p class="p1">];</p>
+<p class="p1">const helper = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"doch eine freundliche Fee half mit einem Zauberstab",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"ein weiser Zauberer gab ein magisches Buch",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"ein sprechendes Tier reichte eine Karte",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"ein alter Zwerg schenkte einen geheimnisvollen Schlüssel",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"Eine alte Schildkröte erschien und übergab einen geheimnisvollen Schlüssel",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"ein freundlicher Bär übergab ein schützendes Amulett"</p>
+<p class="p1">];</p>
+<p class="p1">const solution = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"und damit bewältigte die Figur alle Prüfungen",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"so könnten die Aufgaben wie durch Zauberei gelöst werden",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"so meisterte sie die schwierige/n Aufgaben",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"und damit war sie/er/es gerettet",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"so konnte sie/er alle Gefahren überwinden"</p>
+<p class="p1">];</p>
+<p class="p1">const ending = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"und wurde als Held gefeiert",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"und das Königreich lebte in Frieden",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"und erhielt großen Dank und einen Schatz",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"und damit war sie/er/es gerettet",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"da waren fortan alle glücklich und zufrieden"</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">let storyParts = [];</p>
+<p class="p2"><br></p>
+<p class="p1">function getRandom(array) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return array[Math.floor(Math.random() * array.length)];</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function generateStory() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>storyParts = [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('intro').value || getRandom(intro),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('problem').value || getRandom(problem),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('antagonist').value || getRandom(antagonist),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('helper').value || getRandom(helper),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('solution').value || getRandom(solution),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('ending').value || getRandom(ending),</p>
+<p class="p1"><span class="Apple-converted-space">  </span>];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('story').innerHTML = storyParts.join(' ');</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function randomClick() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const steps = [intro, problem, antagonist, helper, solution, ending];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const nextStep = steps[storyParts.length];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(nextStep) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>storyParts.push(getRandom(nextStep));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('story').innerHTML = storyParts.join(' ');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
