@@ -2,230 +2,125 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<title>Märchen-Generator – 5. Klasse</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Märchen-Generator</title>
+
 <style>
-  body {
-    font-family: "Arial", sans-serif;
-    background: #fff8e7;
-    padding: 20px;
-    color: #333;
-  }
-  h1 {
-    text-align: center;
-    color: #d2691e;
-  }
-  .story-container {
-    background: #fff4d6;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    max-width: 700px;
-    margin: 20px auto;
-    line-height: 1.6;
-    min-height: 120px;
-  }
-  button, select, input {
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 8px;
-    border: 1px solid #d2691e;
-    background-color: #ffe5b4;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  button:hover, select:hover, input:hover {
-    background-color: #ffd699;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8e1;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  color: #8b4513;
+}
+.container {
+  max-width: 750px;
+  margin: auto;
+}
+label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #8b4513;
+  font-size: 16px;
+}
+button {
+  background-color: #ffdd99;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ffd066;
+}
+.story {
+  background-color: #fff3cd;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  min-height: 120px;
+}
+#downloadBtn {
+  display: none;
+  margin-top: 10px;
+}
 </style>
 </head>
+
 <body>
 
-<h1>Märchen-Generator</h1>
+<h1>Märchen schreiben – 5. Klasse</h1>
 
-<div style="max-width:700px; margin:auto;">
-  <label>Überschrift für dein Märchen: </label>
-  <input type="text" id="titleInput" placeholder="Hier Titel eingeben">
-  <button onclick="setTitle()">Titel speichern</button>
-</div>
+<div class="container">
 
-<div class="story-container" id="story">
-  <p>Hier entsteht dein Märchen Schritt für Schritt...</p>
-</div>
+<label>Überschrift:</label>
+<input id="title" placeholder="Titel deines Märchens">
 
-<div style="max-width:700px; margin:auto;">
-  <label>1️⃣ Einführung: </label>
-  <select id="intro">
-    <option value="">-- Zufällig --</option>
-    <option>Es war einmal ein mutiges Kind in einem fernen Dorf</option>
-    <option>Es war einmal eine neugierige Prinzessin auf einem hohen Schloss</option>
-    <option>Es war einmal ein schlauer Junge in einer kleinen Stadt</option>
-    <option>Es war einmal eine freundliche Hexe tief im Wald</option>
-    <option>Es war einmal ein tapferer Ritter auf einem fernen Hügel</option>
-  </select>
+<label>Hauptfigur:</label>
+<input id="person" placeholder="z. B. ein mutiger Junge, Lena, ein Ritter">
 
-  <label>2️⃣ Problem: </label>
-  <select id="problem">
-    <option value="">-- Zufällig --</option>
-    <option>der/die/das plötzlich in große Gefahr geriet</option>
-    <option>der/die/das von einem geheimnisvollen Fluch bedroht wurde</option>
-    <option>der/die/das sein wichtiges Tier verlor</option>
-    <option>der/die/das von einem bösen Zauberer gejagt wurde</option>
-    <option>der/die/das von einem Sturm oder Unwetter heimgesucht wurde</option>
-  </select>
+<label>Gegner (Bösewicht):</label>
+<input id="villain" placeholder="z. B. ein Drache, eine Hexe">
 
-  <label>3️⃣ Antagonist / Aufgabe: </label>
-  <select id="antagonist">
-    <option value="">-- Zufällig --</option>
-    <option>und da stellte ein böser Drache die Aufgabe, ….</option>
-    <option>plötzlich erschien eine listige Hexe und sprach: ….</option>
-    <option>forderte ein riesiger Riese eine schwierige Aufgabe ….</option>
-    <option>ein strenger König verlangte eine mutige Tat, ….</option>
-    <option>ein finsterer Zauberer sagte: ….</option>
-  </select>
+<label>Helfer:</label>
+<input id="helper" placeholder="z. B. eine Fee, ein Tier">
 
-  <label>4️⃣ Helfer + Gegenstand: </label>
-  <select id="helper">
-    <option value="">-- Zufällig --</option>
-    <option>doch eine freundliche Fee half mit einem Zauberstab</option>
-    <option>ein weiser Zauberer gab ein magisches Buch</option>
-    <option>ein sprechendes Tier reichte eine Karte</option>
-    <option>ein alter Zwerg schenkte einen geheimnisvollen Schlüssel</option>
-    <option>Eine alte Schildkröte erschien und übergab einen geheimnisvollen Schlüssel</option>
-    <option>ein freundlicher Bär übergab ein schützendes Amulett</option>
-  </select>
+<label>Magischer Gegenstand:</label>
+<input id="item" placeholder="z. B. Zauberstab, Schlüssel">
 
-  <label>5️⃣ Aufgabe lösen / Abenteuer bewältigen: </label>
-  <select id="solution">
-    <option value="">-- Zufällig --</option>
-    <option>und damit bewältigte die Figur alle Prüfungen</option>
-    <option>so könnten die Aufgaben wie durch Zauberei gelöst werden</option>
-    <option>so meisterte sie die schwierige/n Aufgaben</option>
-    <option>und damit war sie/er/es gerettet</option>
-    <option>so konnte sie/er alle Gefahren überwinden</option>
-  </select>
+<button onclick="generateStory()">Märchen erzeugen</button>
 
-  <label>6️⃣ Belohnung / Happy End: </label>
-  <select id="ending">
-    <option value="">-- Zufällig --</option>
-    <option>und wurde als Held gefeiert</option>
-    <option>und das Königreich lebte in Frieden</option>
-    <option>und erhielt großen Dank und einen Schatz</option>
-    <option>und damit war sie/er/es gerettet</option>
-    <option>da waren fortan alle glücklich und zufrieden</option>
-  </select>
+<div class="story" id="story"></div>
 
-  <button onclick="generateStory()">Märchen zusammenstellen</button>
-  <button onclick="randomClick()">Zufälligen Satz hinzufügen</button>
-</div>
+<button id="downloadBtn" onclick="downloadStory()">📥 Märchen speichern</button>
 
-<div style="max-width:700px; margin:auto; margin-top:10px;">
-  <button id="downloadBtn" style="display:none;" onclick="downloadStory()">Geschichte herunterladen</button>
 </div>
 
 <script>
-const intro = [
-  "Es war einmal ein mutiges Kind in einem fernen Dorf",
-  "Es war einmal eine neugierige Prinzessin auf einem hohen Schloss",
-  "Es war einmal ein schlauer Junge in einer kleinen Stadt",
-  "Es war einmal eine freundliche Hexe tief im Wald",
-  "Es war einmal ein tapferer Ritter auf einem fernen Hügel"
-];
-const problem = [
-  "der/die/das plötzlich in große Gefahr geriet",
-  "der/die/das von einem geheimnisvollen Fluch bedroht wurde",
-  "der/die/das sein wichtiges Tier verlor",
-  "der/die/das von einem bösen Zauberer gejagt wurde",
-  "der/die/das von einem Sturm oder Unwetter heimgesucht wurde"
-];
-const antagonist = [
-  "und da stellte ein böser Drache die Aufgabe, ….",
-  "plötzlich erschien eine listige Hexe und sprach: ….",
-  "forderte ein riesiger Riese eine schwierige Aufgabe ….",
-  "ein strenger König verlangte eine mutige Tat, ….",
-  "ein finsterer Zauberer sagte: …."
-];
-const helper = [
-  "doch eine freundliche Fee half mit einem Zauberstab",
-  "ein weiser Zauberer gab ein magisches Buch",
-  "ein sprechendes Tier reichte eine Karte",
-  "ein alter Zwerg schenkte einen geheimnisvollen Schlüssel",
-  "Eine alte Schildkröte erschien und übergab einen geheimnisvollen Schlüssel",
-  "ein freundlicher Bär übergab ein schützendes Amulett"
-];
-const solution = [
-  "und damit bewältigte die Figur alle Prüfungen",
-  "so könnten die Aufgaben wie durch Zauberei gelöst werden",
-  "so meisterte sie die schwierige/n Aufgaben",
-  "und damit war sie/er/es gerettet",
-  "so konnte sie/er alle Gefahren überwinden"
-];
-const ending = [
-  "und wurde als Held gefeiert",
-  "und das Königreich lebte in Frieden",
-  "und erhielt großen Dank und einen Schatz",
-  "und damit war sie/er/es gerettet",
-  "da waren fortan alle glücklich und zufrieden"
-];
-
-let storyParts = [];
-let title = "";
-
-function getRandom(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
-function setTitle() {
-  title = document.getElementById('titleInput').value.trim();
-  displayStory();
-}
-
 function generateStory() {
-  storyParts = [
-    document.getElementById('intro').value || getRandom(intro),
-    document.getElementById('problem').value || getRandom(problem),
-    document.getElementById('antagonist').value || getRandom(antagonist),
-    document.getElementById('helper').value || getRandom(helper),
-    document.getElementById('solution').value || getRandom(solution),
-    document.getElementById('ending').value || getRandom(ending),
-  ];
-  displayStory();
-  checkDownload();
-}
+  const title = titleInput("title");
+  const person = titleInput("person");
+  const villain = titleInput("villain");
+  const helper = titleInput("helper");
+  const item = titleInput("item");
 
-function randomClick() {
-  const steps = [intro, problem, antagonist, helper, solution, ending];
-  const nextStep = steps[storyParts.length];
-  if(nextStep) {
-    storyParts.push(getRandom(nextStep));
-    displayStory();
-    checkDownload();
+  if (!person || !villain || !helper || !item) {
+    alert("Bitte fülle alle Felder aus.");
+    return;
   }
+
+  const text = `
+Es war einmal ${person}.
+Eines Tages geriet ${person} in große Gefahr, denn ${villain} bedrohte das Land.
+${villain} stellte eine schwere Aufgabe, die gelöst werden musste.
+Doch ${helper} kam zur Hilfe und gab ${person} ${item}.
+Mit ${item} konnte ${person} alle Gefahren überwinden.
+Am Ende wurde ${person} als Held gefeiert und alle lebten glücklich und zufrieden.
+`;
+
+  document.getElementById("story").innerHTML =
+    (title ? `<h2>${title}</h2>` : "") +
+    text.replace(/\n/g, "<br>");
+
+  document.getElementById("downloadBtn").style.display = "block";
 }
 
-function displayStory() {
-  const storyContainer = document.getElementById('story');
-  let html = "";
-  if(title) html += `<h2>${title}</h2>`;
-  html += storyParts.join(' ');
-  storyContainer.innerHTML = html;
-}
-
-function checkDownload() {
-  const downloadBtn = document.getElementById('downloadBtn');
-  if(storyParts.length === 6) {
-    downloadBtn.style.display = "inline-block";
-  } else {
-    downloadBtn.style.display = "none";
-  }
+function titleInput(id) {
+  return document.getElementById(id).value.trim();
 }
 
 function downloadStory() {
-  const text = (title ? title + "\n\n" : "") + storyParts.join(' ');
+  const text = document.getElementById("story").innerText;
   const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
-  link.download = (title ? title : "maerchen") + ".txt";
+  link.download = "maerchen_5klasse.txt";
   link.click();
 }
 </script>
