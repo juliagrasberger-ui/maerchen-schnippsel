@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Märchen-Generator – 5. Klasse</title>
+<title>Märchen-Text-Generator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -16,7 +16,7 @@ h1 {
   color: #8b4513;
 }
 .container {
-  max-width: 750px;
+  max-width: 760px;
   margin: auto;
 }
 label {
@@ -24,7 +24,7 @@ label {
   margin-top: 10px;
   display: block;
 }
-input, button {
+input, select, button {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -55,7 +55,7 @@ button:hover {
 
 <body>
 
-<h1>Märchen schreiben – 5. Klasse</h1>
+<h1>Ein Märchen schreiben</h1>
 
 <div class="container">
 
@@ -63,16 +63,41 @@ button:hover {
 <input id="title" placeholder="Titel deines Märchens">
 
 <label>Hauptfigur:</label>
-<input id="person" placeholder="z. B. ein mutiger Junge, Lena, ein Ritter">
+<input id="person" placeholder="z. B. ein mutiger Junge, Schneeweißchen, ein rostiger Ritter, ein Zauberlehrling">
+
+<label>Ort:</label>
+<input id="place" placeholder="z. B. in einem kleinen Dorf, auf einer Burg, tief im Wald, hinter einem Teich">
 
 <label>Gegner (Bösewicht):</label>
-<input id="villain" placeholder="z. B. ein Drache, eine Hexe">
+<input id="villain" placeholder="z. B. ein grüner Drache, eine fiese Hexe, ein böser Zauberer, eine gemeine Königin">
+
+<label>Anzahl der Aufgaben:</label>
+<select id="taskCount">
+  <option value="">Bitte wählen</option>
+  <option>1</option>
+  <option>3</option>
+  <option>7</option>
+  <option>12</option>
+</select>
+
+<label>Art der Aufgabe:</label>
+<select id="taskType">
+  <option value="">Bitte wählen</option>
+  <option>Rätsel lösen</option>
+  <option>Nüsse sammeln</option>
+  <option>Nächte wach bleiben</option>
+  <option>Geister fangen</option>
+  <option>Goldesel finden</option>
+</select>
 
 <label>Helfer:</label>
-<input id="helper" placeholder="z. B. eine Fee, ein Tier">
+<input id="helper" placeholder="z. B. eine Fee, ein besonderes Tier, ein Zwerg, der Jäger">
 
 <label>Magischer Gegenstand:</label>
-<input id="item" placeholder="z. B. Zauberstab, Schlüssel">
+<input id="item" placeholder="z. B. Zauberstab, Schlüssel, Schuh, Zaubertrank">
+  
+<label>Belohnung:</label>
+<input id="reward" placeholder="z. B. einen Schatz, Ruhm und Ehre">
 
 <button onclick="generateStory()">Märchen erzeugen</button>
 
@@ -84,34 +109,39 @@ button:hover {
 
 <script>
 function generateStory() {
-  const title = titleInput("title");
-  const person = titleInput("person");
-  const villain = titleInput("villain");
-  const helper = titleInput("helper");
-  const item = titleInput("item");
+  const title = getValue("title");
+  const person = getValue("person");
+  const place = getValue("place");
+  const villain = getValue("villain");
+  const helper = getValue("helper");
+  const item = getValue("item");
+  const taskCount = getValue("taskCount");
+  const taskType = getValue("taskType");
+const reward = getValue("reward");
 
-  if (!person || !villain || !helper || !item) {
+  if (!person || !place || !villain || !helper || !item || !taskCount || !taskType || !reward) {
     alert("Bitte fülle alle Felder aus.");
     return;
   }
-
-  const text = `
-Es war einmal ${person}.
+  
+  const storyText = `
+Es war einmal ${person}. ${person} lebte vor langer Zeit ${place}.
 Eines Tages geriet ${person} in große Gefahr, denn ${villain} bedrohte das Land.
-${villain} stellte eine schwere Aufgabe, die gelöst werden musste.
-Doch ${helper} kam zur Hilfe und gab ${person} ${item}.
-Mit ${item} konnte ${person} alle Gefahren überwinden.
-Am Ende wurde ${person} als Held gefeiert und alle lebten glücklich und zufrieden.
+${villain} verlangte ${taskCount} schwierige Aufgaben: ${person} sollte ${taskType}.
+${person} war verzweifelt und wusste nicht wie das gehen sollte.
+Doch glücklicherweise kam ${helper} zur Hilfe und gab ${person} ${item}.
+Mit ${item} konnte ${person} alle ${taskCount} Aufgaben ganz einfach lösen.
+Am Ende wurde ${person} berühmt und bekam  ${reward} und alle lebten glücklich und zufrieden bis an ihr Lebensende.
 `;
 
   document.getElementById("story").innerHTML =
     (title ? `<h2>${title}</h2>` : "") +
-    text.replace(/\n/g, "<br>");
+    storyText.replace(/\n/g, "<br>");
 
   document.getElementById("downloadBtn").style.display = "block";
 }
 
-function titleInput(id) {
+function getValue(id) {
   return document.getElementById(id).value.trim();
 }
 
